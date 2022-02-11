@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://1.14.208.152:3306/simple?useUnicode=true&useSSL=true&serverTimezone=UTC
+    username: root
+    password: Aa521580!
+  profiles:
+    active: dev
+
+mybatis:
+  #扫描自定义model的
+  type-aliases-package: com.ctl.simple.model
+  mapper-locations: classpath*:com/ctl/simple/mapper/*.xml
+
+logging:
+  level:
+    com:
+      example:
+        mapper : debug

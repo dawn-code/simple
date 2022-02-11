@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ctl.simple.mapper.WordMapper">
+    <resultMap id="BaseResultMap" type="com.ctl.simple.model.Word">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="text" jdbcType="VARCHAR" property="text"/>
+        <result column="description" jdbcType="VARCHAR" property="description"/>
+        <result column="type" jdbcType="VARCHAR" property="type"/>
+        <result column="groupBy" jdbcType="VARCHAR" property="groupBy"/>
+        <result column="author" jdbcType="VARCHAR" property="author"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+        id, text, description, type, groupBy, author
+    </sql>
+    <select id="selectByExample" parameterType="com.ctl.simple.model.WordExample" resultMap="BaseResultMap">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from word
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from word
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from word
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <delete id="deleteByExample" parameterType="com.ctl.simple.model.WordExample">
+        delete from word
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.ctl.simple.model.Word">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into word (id, text, description,
+        type, groupBy, author
+        )
+        values (#{id,jdbcType=INTEGER}, #{text,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR},
+        #{type,jdbcType=VARCHAR}, #{groupBy,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}
+        )
+    </insert>
+    <insert id="insertSelective" parameterType="com.ctl.simple.model.Word">
+        insert into word
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="text != null">
+                text,
+            </if>
+            <if test="description != null">
+                description,
+            </if>
+            <if test="type != null">
+                type,
+            </if>
+            <if test="groupBy != null">
+                groupBy,
+            </if>
+            <if test="author != null">
+                author,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="text != null">
+                #{text,jdbcType=VARCHAR},
+            </if>
+            <if test="description != null">
+                #{description,jdbcType=VARCHAR},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=VARCHAR},
+            </if>
+            <if test="groupBy != null">
+                #{groupBy,jdbcType=VARCHAR},
+            </if>
+            <if test="author != null">
+                #{author,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.ctl.simple.model.WordExample" resultType="java.lang.Long">
+        select count(*) from word
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update word
+        <set>
+            <if test="record.id != null">
+                id = #{record.id,jdbcType=INTEGER},
+            </if>
+            <if test="record.text != null">
+                text = #{record.text,jdbcType=VARCHAR},
+            </if>
+            <if test="record.description != null">
+                description = #{record.description,jdbcType=VARCHAR},
+            </if>
+            <if test="record.type != null">
+                type = #{record.type,jdbcType=VARCHAR},
+            </if>
+            <if test="record.groupBy != null">
+                groupBy = #{record.groupBy,jdbcType=VARCHAR},
+            </if>
+            <if test="record.author != null">
+                author = #{record.author,jdbcType=VARCHAR},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update word
+        set id = #{record.id,jdbcType=INTEGER},
+        text = #{record.text,jdbcType=VARCHAR},
+        description = #{record.description,jdbcType=VARCHAR},
+        type = #{record.type,jdbcType=VARCHAR},
+        groupBy = #{record.groupBy,jdbcType=VARCHAR},
+        author = #{record.author,jdbcType=VARCHAR}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.ctl.simple.model.Word">
+        update word
+        <set>
+            <if test="text != null">
+                text = #{text,jdbcType=VARCHAR},
+            </if>
+            <if test="description != null">
+                description = #{description,jdbcType=VARCHAR},
+            </if>
+            <if test="type != null">
+                type = #{type,jdbcType=VARCHAR},
+            </if>
+            <if test="groupBy != null">
+                groupBy = #{groupBy,jdbcType=VARCHAR},
+            </if>
+            <if test="author != null">
+                author = #{author,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.ctl.simple.model.Word">
+        update word
+        set text = #{text,jdbcType=VARCHAR},
+        description = #{description,jdbcType=VARCHAR},
+        type = #{type,jdbcType=VARCHAR},
+        groupBy = #{groupBy,jdbcType=VARCHAR},
+        author = #{author,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+</mapper>
