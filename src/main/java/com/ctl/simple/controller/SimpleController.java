@@ -28,9 +28,8 @@ public class SimpleController {
     public String get(@PathVariable(value = "text") String text) {
         log.info("request simple get interface");
         List<Word> wordList = simpleService.get(text);
-        String str = JSON.toJSONString(wordList, SerializerFeature.PrettyFormat, SerializerFeature.WriteMapNullValue,
+        return JSON.toJSONString(wordList, SerializerFeature.PrettyFormat, SerializerFeature.WriteMapNullValue,
                 SerializerFeature.WriteDateUseDateFormat);
-        return str;
     }
 
     @GetMapping("/add/{count}")
