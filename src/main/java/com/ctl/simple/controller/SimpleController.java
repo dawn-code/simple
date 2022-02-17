@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.ctl.simple.model.Word;
 import com.ctl.simple.service.SimpleService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +19,7 @@ import java.util.List;
  * @author ctl
  */
 @Log4j2
+@Api(tags = "simple Controller")
 @RestController
 @RequestMapping("/simple")
 public class SimpleController {
@@ -25,6 +28,7 @@ public class SimpleController {
     private SimpleService simpleService;
 
     @GetMapping("/get/{text}")
+    @ApiOperation(value = "获取数据库信息",notes = "根据text获取数据库信息")
     public String get(@PathVariable(value = "text") String text) {
         log.info("request simple get interface");
         List<Word> wordList = simpleService.get(text);
