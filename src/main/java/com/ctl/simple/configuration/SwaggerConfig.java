@@ -38,10 +38,9 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 //文档说明页面标题
-                .title("API接口")
-                .description("信息管理系统接口定义")
+                .title("Simple API")
                 //文档版本说明
-                .version("v1.0.0")
+                .version("v1.0")
                 //创建人信息
                 .contact(new Contact("JARVIS", "http://127.0.0.1:8080/swagger-ui.html", ""))
                 .build();

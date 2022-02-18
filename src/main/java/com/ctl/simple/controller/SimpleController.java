@@ -19,7 +19,7 @@ import java.util.List;
  * @author ctl
  */
 @Log4j2
-@Api(tags = "simple Controller")
+@Api(tags = "SimpleController",value = "simple入口类")
 @RestController
 @RequestMapping("/simple")
 public class SimpleController {
@@ -28,7 +28,7 @@ public class SimpleController {
     private SimpleService simpleService;
 
     @GetMapping("/get/{text}")
-    @ApiOperation(value = "获取数据库信息",notes = "根据text获取数据库信息")
+    @ApiOperation(value = "查询simple",notes = "根据text获取数据库信息")
     public String get(@PathVariable(value = "text") String text) {
         log.info("request simple get interface");
         List<Word> wordList = simpleService.get(text);
@@ -37,6 +37,7 @@ public class SimpleController {
     }
 
     @GetMapping("/add/{count}")
+    @ApiOperation(value = "添加simple",notes = "根据text获取数据库信息")
     public String add(@PathVariable(value = "count") int count) {
         long start = System.currentTimeMillis();
         log.info("request simple add interface");

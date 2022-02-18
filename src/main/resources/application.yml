@@ -6,9 +6,10 @@ spring:
     password: Aa521580!
   profiles:
     active: dev
-#  mvc:
-#    pathmatch:
-#      matching-strategy: ant_path_matcher
+  #不加此段swagger启动报错
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
 mybatis:
   #扫描自定义model的
@@ -20,7 +21,3 @@ logging:
     com:
       example:
         mapper : debug
-
-swagger:
-  enable=true:
-
