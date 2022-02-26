@@ -12,12 +12,11 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @Configuration
 @ComponentScan(basePackages = "com.ctl.simple.test")
 @EnableAspectJAutoProxy
-public class AopConfig {
-
+public class AopConfigTest {
 
     @Test
     public void testProxy() {
-        ApplicationContext context = new AnnotationConfigApplicationContext(AopConfig.class);
+        ApplicationContext context = new AnnotationConfigApplicationContext(AopConfigTest.class);
         // 注意，这里只能通过Human.class获取，而无法通过Student.class，因为在Spirng容器中，
         // 使用JDK动态代理，Ioc容器中，存储的是一个类型为Human的代理对象
         Student human = context.getBean(Student.class);
