@@ -1,14 +1,14 @@
 package com.ctl.simple.util;
 
-import static java.lang.Math.random;
-
 import java.sql.Date;
 import java.util.Calendar;
 
+import static java.lang.Math.random;
+
 /**
+ * @author Cage Yang
  * @ClassName RandomStudent
  * @description
- * @author Cage Yang
  */
 public class RandomStudent {
 

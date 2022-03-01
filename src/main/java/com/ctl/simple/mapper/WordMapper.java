@@ -2,12 +2,9 @@ package com.ctl.simple.mapper;
 
 import com.ctl.simple.model.Word;
 import com.ctl.simple.model.WordExample;
-import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @author ctl
