@@ -1,0 +1,11 @@
+【基础请求】
+idea | idea setting
+apache-maven-3.8.4
+spring boot
+
+【服务器】
+防火墙配置 firewall-cmd --permanent --zone=public --add-port=3306/tcp    firewall-cmd --reload
+
+【工具】
+xshell
+navicat for mysql

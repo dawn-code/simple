@@ -1,6 +1,4 @@
-package com.ctl.simple.service.impl;
-
-import com.ctl.simple.service.ServiceInitializer;
+package com.ctl.simple.spi;
 
 /**
  * @author Administrator

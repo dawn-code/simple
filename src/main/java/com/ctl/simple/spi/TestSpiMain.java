@@ -1,10 +1,12 @@
-package com.ctl.simple.main;
-
-import com.ctl.simple.service.ServiceInitializer;
+package com.ctl.simple.spi;
 
 import java.util.ServiceLoader;
 
 /**
+ * SPI测试
+ * <p>
+ * ServiceLoader
+ *
  * @author Administrator
  */
 public class TestSpiMain {

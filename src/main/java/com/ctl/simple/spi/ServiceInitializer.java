@@ -1,4 +1,4 @@
-package com.ctl.simple.service;
+package com.ctl.simple.spi;
 
 /**
  * @author Administrator

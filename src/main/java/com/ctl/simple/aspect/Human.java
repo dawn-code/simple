@@ -1,4 +1,4 @@
-package com.ctl.simple.springaoptest;
+package com.ctl.simple.aspect;
 
 /**
  * @author Administrator

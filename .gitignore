@@ -1,5 +1,5 @@
 HELP.md
-笔记.txt
+要弄清晰的.txt
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/

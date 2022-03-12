@@ -1,4 +1,4 @@
-package com.ctl.simple.main;
+package com.ctl.simple.breakpoint;
 
 /**
  * 验证断点可以改调试多线程模式,控制线程的先后执行，能确保是线程安全模式
