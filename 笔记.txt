@@ -1,0 +1,16 @@
+【基础请求】
+idea | idea setting
+apache-maven-3.8.4
+spring boot
+
+【服务器】
+防火墙配置 firewall-cmd --permanent --zone=public --add-port=3306/tcp    firewall-cmd --reload
+
+【工具】
+xshell
+navicat for mysql
+
+【要探索的原理】
+jdk动态代理 反射 class spi aop 自动配置 起步依赖 META-INF下文件的意义 【mybatis本身 mybatis与spring集成 mybatis自动配置起步依赖】
+原生jdbc 射击模式 HikariDataSource @Mapper注解和@Repository注解，@Mapper的不用加扫描，@Repository需要，@MapperScan再探讨
+
