@@ -19,13 +19,13 @@
 	</properties>
 
 	<dependencies>
-
-		<!-- web -->
+		<!-- web模块 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!-- 这个jar包可以在你写自义定spring-boot-start的时候在META-INF下生成spring-configuration-metadata.json文件，这样你在配置文件中就会有自动提示，而且可以ctrl点进去 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
@@ -53,20 +53,21 @@
 			<version>2.2.2</version>
 		</dependency>
 
-		<!-- mybatis generator -->
+		<!-- mybatis生成的 -->
 		<dependency>
 			<groupId>org.mybatis.generator</groupId>
 			<artifactId>mybatis-generator-core</artifactId>
 			<version>1.4.0</version>
 		</dependency>
 
-		<!--json-->
+		<!-- json -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>1.2.79</version>
 		</dependency>
 
+		<!-- swagger2 -->
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
@@ -89,6 +90,8 @@
 			<artifactId>guava</artifactId>
 			<version>25.1-jre</version>
 		</dependency>
+
+		<!-- 切面使用 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aspects</artifactId>
@@ -110,13 +113,6 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
 			</plugin>
 		</plugins>
