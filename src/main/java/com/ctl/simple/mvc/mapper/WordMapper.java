@@ -1,7 +1,7 @@
-package com.ctl.simple.mapper;
+package com.ctl.simple.mvc.mapper;
 
-import com.ctl.simple.model.Word;
-import com.ctl.simple.model.WordExample;
+import com.ctl.simple.mvc.model.Word;
+import com.ctl.simple.mvc.model.WordExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

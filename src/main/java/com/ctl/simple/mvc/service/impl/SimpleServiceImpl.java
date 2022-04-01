@@ -1,10 +1,10 @@
-package com.ctl.simple.service.impl;
+package com.ctl.simple.mvc.service.impl;
 
-import com.ctl.simple.mapper.WordMapper;
-import com.ctl.simple.model.Word;
-import com.ctl.simple.model.WordExample;
-import com.ctl.simple.service.SimpleService;
-import com.ctl.simple.util.RandomStudent;
+import com.ctl.simple.mvc.mapper.WordMapper;
+import com.ctl.simple.mvc.model.Word;
+import com.ctl.simple.mvc.model.WordExample;
+import com.ctl.simple.mvc.service.SimpleService;
+import com.ctl.simple.mvc.util.RandomStudent;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * @author ctl
+ * @author Jxr
  */
 @Log4j2
 @Service
@@ -30,6 +30,7 @@ public class SimpleServiceImpl implements SimpleService {
 
     @Override
     public void add(int count) {
+        log.info("request add interface start");
         for (int i = 1; i <= count; i++) {
             Word word = new Word();
             word.setAuthor(RandomStudent.getName());
@@ -40,6 +41,6 @@ public class SimpleServiceImpl implements SimpleService {
             log.info("i:" + i);
             wordMapper.insert(word);
         }
-
+        log.info("request add interface end");
     }
 }

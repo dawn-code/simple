@@ -14,7 +14,7 @@ spring:
 
 mybatis:
   #扫描自定义model的
-  type-aliases-package: com.ctl.simple.model
+  type-aliases-package: com.ctl.simple.mvc.model
   mapper-locations: classpath*:com/ctl/simple/mapper/*.xml
 
 logging:

@@ -1,4 +1,4 @@
-package com.ctl.simple;
+package com.ctl.simple.mvc.mybatis;
 
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;

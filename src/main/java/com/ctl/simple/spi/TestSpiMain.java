@@ -7,13 +7,13 @@ import java.util.ServiceLoader;
  * <p>
  * ServiceLoader
  *
- * @author Administrator
+ * @author Jxr
  */
 public class TestSpiMain {
 
     public static void main(String[] args) {
-        ServiceLoader<ServiceInitializer> initializers = ServiceLoader.load(ServiceInitializer.class);
-        for (ServiceInitializer initializer : initializers) {
+        ServiceLoader<InitializerService> initializers = ServiceLoader.load(InitializerService.class);
+        for (InitializerService initializer : initializers) {
             initializer.init();
         }
     }

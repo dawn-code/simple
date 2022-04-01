@@ -1,9 +1,9 @@
-package com.ctl.simple.controller;
+package com.ctl.simple.mvc.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.ctl.simple.model.Word;
-import com.ctl.simple.service.SimpleService;
+import com.ctl.simple.mvc.model.Word;
+import com.ctl.simple.mvc.service.SimpleService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.log4j.Log4j2;

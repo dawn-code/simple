@@ -1,26 +1,29 @@
 package com.ctl.simple.jdkdynamic;
 
+import lombok.extern.log4j.Log4j2;
+
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
 /**
  * 虽然是扩展增强，但是可以和接口无关性
  *
- * @author Administrator
+ * @author Jxr
  */
-public class CustomInvocationHandler implements InvocationHandler {
+@Log4j2
+public class HelloWorldInvocationHandler implements InvocationHandler {
 
-    private Object target;
+    private final Object target;
 
-    public CustomInvocationHandler(Object target) {
+    public HelloWorldInvocationHandler(Object target) {
         this.target = target;
     }
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        System.out.println("Before invocation");
+        log.info("Before invocation");
         Object retVal = method.invoke(target, args);
-        System.out.println("After invocation");
+        log.info("After invocation");
         return retVal;
     }
 

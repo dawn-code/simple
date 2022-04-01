@@ -1,11 +1,11 @@
-package com.ctl.simple.service;
+package com.ctl.simple.mvc.service;
 
-import com.ctl.simple.model.Word;
+import com.ctl.simple.mvc.model.Word;
 
 import java.util.List;
 
 /**
- * @author ctl
+ * @author Jxr
  */
 public interface SimpleService {
 
@@ -17,6 +17,11 @@ public interface SimpleService {
      */
     List<Word> get(String text);
 
+    /**
+     * 数据库中加数据
+     *
+     * @param count
+     */
     void add(int count);
 
 }

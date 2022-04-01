@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class HumanAspect {
-    //
 
     /**
      *  为Student这个类的所有方法，配置这个前置通知

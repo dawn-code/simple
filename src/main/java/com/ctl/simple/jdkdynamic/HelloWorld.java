@@ -1,7 +1,7 @@
 package com.ctl.simple.jdkdynamic;
 
 /**
- * @author Administrator
+ * @author Jxr
  */
 public interface HelloWorld {
 

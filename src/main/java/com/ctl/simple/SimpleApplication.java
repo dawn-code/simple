@@ -6,15 +6,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * @author ctl
+ * @author Jxr
  */
 @EnableSwagger2
 @SpringBootApplication
-@MapperScan("com.ctl.simple.mapper")
+@MapperScan("com.ctl.simple.mvc.mapper")
 public class SimpleApplication {
 
     public static void main(String[] args) {
-
         SpringApplication.run(SimpleApplication.class, args);
     }
 

@@ -1,4 +1,4 @@
-package com.ctl.simple.util;
+package com.ctl.simple.mvc.util;
 
 import java.sql.Date;
 import java.util.Calendar;
@@ -17,18 +17,22 @@ public class RandomStudent {
      * @return 生成的学生姓名。
      */
     public static String getName() {
+
         // 20个姓，其中5个复姓
         String[] firstNameArray = { "李", "王", "张", "刘", "陈", "杨", "赵", "黄", "周", "吴", "徐", "孙", "胡", "朱", "高", "欧阳",
                 "太史", "端木", "上官", "司马", "车"};
+
         // 80个常用于名字的单字
         String[] lastNameArray = { "伟", "勇", "军", "磊", "涛", "斌", "强", "鹏", "杰", "峰", "超", "波", "辉", "刚", "健", "明", "亮",
                 "俊", "飞", "凯", "浩", "华", "平", "鑫", "毅", "林", "洋", "宇", "敏", "宁", "建", "兵", "旭", "雷", "锋", "彬", "龙", "翔",
                 "阳", "剑", "静", "敏", "燕", "艳", "丽", "娟", "莉", "芳", "萍", "玲", "娜", "丹", "洁", "红", "颖", "琳", "霞", "婷", "慧",
                 "莹", "晶", "华", "倩", "英", "佳", "梅", "雪", "蕾", "琴", "璐", "伟", "云", "蓉", "青", "薇", "欣", "琼", "宁", "平",
                 "媛" };
+
         int firstPos = (int) (20 * random());
         StringBuilder name = new StringBuilder(firstNameArray[firstPos]);
         int lastLen = (int) (2 * random()) + 1;
+
         /*
          * 为了各函数的统一性，此处也用for循环实现 int lastPos1 = (int) (80 * random()); String lastName =
          * lastNameArray[lastPos1]; if (lastLen == 2) { int lastPos2 = (int) (80 *
@@ -62,7 +66,8 @@ public class RandomStudent {
      * @return 选择的学习方向。
      */
     public static String getMajor() {
-        String[] majorArray = { "css", "js", "android", "ios", "java", "op", "pm", "ui", "qa" };// 共有9种方向
+        // 共有9种方向
+        String[] majorArray = {"css", "js", "android", "ios", "java", "op", "pm", "ui", "qa"};
         int majorPos = (int) (9 * random());
         return majorArray[majorPos];
     }
@@ -117,15 +122,6 @@ public class RandomStudent {
      */
     public static String getDesire() {
         return "好好学习，天天向上！";
-    }
-
-    /**
-     * @description 随机生成师兄姓名，通过调用getName实现。
-     * @return 生成的师兄姓名
-     */
-    public static String getJnshuBro() {
-        // 插入大量数据时，考虑到效率，此处可能会改为固定姓名。
-        return getName();
     }
 
     /**
