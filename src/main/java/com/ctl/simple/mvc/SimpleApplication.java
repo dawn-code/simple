@@ -1,4 +1,4 @@
-package com.ctl.simple;
+package com.ctl.simple.mvc;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

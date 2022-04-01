@@ -6,8 +6,7 @@ jdk动态代理 要加强的是方法 不仅仅是要生成一个对象instance�
 jdk动态代理实现接口的类，可以写进去目标接口内容也可以不写进去，更灵活
 
 
-aop - 系统路径下的功能增强横切，https://www.cnblogs.com/joy99/p/10941543.html，原理
-spring spi - 加载的是第三方框架内容，不是系统路径下的，框架功能扩展
+
 spring自动配置
 spring起步依赖
 

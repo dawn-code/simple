@@ -2,4 +2,4 @@ SPI 服务提供接口
 
 resources下面新建目录META-INF/services
 
-可以跨jar包加载
+spring spi - 加载的是第三方框架内容，不是系统路径下的，框架功能扩展 可以跨jar包加载

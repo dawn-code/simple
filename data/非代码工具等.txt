@@ -1,6 +1,0 @@
-【服务器】
-防火墙配置 firewall-cmd --permanent --zone=public --add-port=3306/tcp    firewall-cmd --reload
-
-【工具】
-xshell
-navicat for mysql
