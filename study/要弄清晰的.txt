@@ -21,12 +21,9 @@ META-INF/spring.factories
 HikariDataSource
 
 
-@Mapper注解和@Repository注解
-@Mapper的不用加扫描，是mybatis的注解
-@Repository需要加扫描，是spring的注解
-@MapperScan 是mybatis-spring的注解
 
 
-好多都是功能增强：动态代理，切面，SPI，等
+
+功能增强：动态代理，切面，SPI等
 
 
