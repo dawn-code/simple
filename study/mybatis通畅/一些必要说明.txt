@@ -1,0 +1,9 @@
+mybatis官网：https://mybatis.org/mybatis-3/zh/
+
+
+mybatis本身
+mybatis与spring集成 https://blog.csdn.net/D_19901719576/article/details/98373254
+MyBatis集成Spring后，Spring侵入了Mybatis的初始化和mapper绑定，具体就是：
+1）Cofiguration的实例化是读取Spring的配置文件（注解、配置文件），而不是mybatis-config.xml
+2）mapper对象是方法级别的，Spring通过FactoryBean巧妙地解决了这个问题
+3）事务交由Spring管理

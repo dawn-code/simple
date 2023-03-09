@@ -14,7 +14,7 @@
 	<name>simple</name>
 	<description>simple project for Spring Boot</description>
 	<properties>
-		<java.version>8</java.version>
+		<java.version>16</java.version>
 		<swagger.version>2.9.2</swagger.version>
 	</properties>
 
@@ -98,7 +98,7 @@
 			<scope>compile</scope>
 		</dependency>
 
-	</dependencies>
+    </dependencies>
 
 	<build>
 		<plugins>
