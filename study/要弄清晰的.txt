@@ -21,9 +21,4 @@ META-INF/spring.factories
 HikariDataSource
 
 
-
-
-
 功能增强：动态代理，切面，SPI等
-
-
