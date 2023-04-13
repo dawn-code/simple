@@ -64,7 +64,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.2.79</version>
+			<version>1.2.83</version>
 		</dependency>
 
 		<!-- swagger2 -->
@@ -88,7 +88,7 @@
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>25.1-jre</version>
+			<version>30.0-jre</version>
 		</dependency>
 
 		<!-- 切面使用 -->
