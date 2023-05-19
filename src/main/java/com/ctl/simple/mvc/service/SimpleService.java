@@ -20,7 +20,7 @@ public interface SimpleService {
     /**
      * 数据库中加数据
      *
-     * @param count
+     * @param count 数量
      */
     void add(int count);
 

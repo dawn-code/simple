@@ -16,7 +16,12 @@ import java.net.URL;
  * 1. java内置的
  * 2. apache heepClient的请求方法
  * 3. spring Framework的请求方法包括(RestTemplate,WebClient等)
- *
+ * 4. OkHttp? Android到java的一个框架,好处是什么
+ * <p>
+ * 同时需要考虑一些高可用、负载均衡、重试等问题。一些HTTP客户端库提供了这些功能的支持，如Ribbon、Feign等。
+ * 1.Ribbon
+ * 2.Feign
+ * <p>
  * @author cheti
  */
 public class TestHttpRequest {
