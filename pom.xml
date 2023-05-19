@@ -98,6 +98,13 @@
 			<scope>compile</scope>
 		</dependency>
 
+		<!-- apache httpclent 此处使用的是 5.x 版本，可以根据自身情况引入版本 -->
+		<dependency>
+			<groupId>org.apache.httpcomponents.client5</groupId>
+			<artifactId>httpclient5</artifactId>
+			<version>5.1.1</version>
+		</dependency>
+
     </dependencies>
 
 	<build>
