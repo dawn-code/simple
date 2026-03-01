@@ -4,7 +4,7 @@ public class TheadLocalTest {
 
     static  ThreadLocal<String> str = new ThreadLocal<>();
 
-    public static void main(String[] args) {
+    static void main() {
         str.set("a");
         str.set("b");
         str.get();
