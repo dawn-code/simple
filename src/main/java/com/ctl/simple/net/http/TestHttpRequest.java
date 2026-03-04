@@ -4,6 +4,7 @@ import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
@@ -66,11 +67,12 @@ public class TestHttpRequest {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> response = restTemplate.
                 getForEntity("http://www.example.com", String.class);
-        int statusCode = response.getStatusCodeValue();
-        System.out.println(statusCode);
+        HttpStatusCode statusCode = response.getStatusCode();
+        int statusCodeValue = statusCode.value();
+        System.out.println(statusCodeValue);
     }
 
-    public static void main(String[] args) {
+    static void main() {
         testJavaHttpClient();
         testApacheHttpClient();
         testSpringHttpClient();

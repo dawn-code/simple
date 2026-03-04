@@ -8,5 +8,6 @@ public class TheadLocalTest {
         str.set("a");
         str.set("b");
         str.get();
+        System.out.println("abc");
     }
 }
