@@ -10,6 +10,8 @@ import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 /**
@@ -32,13 +34,15 @@ public class TestHttpRequest {
      */
     public static void testJavaHttpClient() {
         try {
-            URL url = new URL("http://www.example.com");
+            String uriStr = "https://www.example.com";
+            URI uri = new URI(uriStr);
+            URL url = uri.toURL();
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("User-Agent", "Java/1.8");
             int responseCode = conn.getResponseCode();
             System.out.println(responseCode);
-        } catch (IOException e) {
+        } catch (IOException | URISyntaxException e) {
             throw new RuntimeException(e);
         }
     }
@@ -49,9 +53,11 @@ public class TestHttpRequest {
      */
     public static void testApacheHttpClient() {
         try {
-            CloseableHttpClient httpClient = HttpClients.createDefault();
-            HttpGet httpGet = new HttpGet("http://www.example.com");
-            CloseableHttpResponse response = httpClient.execute(httpGet);
+            CloseableHttpResponse response;
+            try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
+                HttpGet httpGet = new HttpGet("https://www.example.com");
+                response = httpClient.execute(httpGet);
+            }
             int responseCode = response.getCode();
             System.out.println(responseCode);
         } catch (IOException e) {
@@ -66,7 +72,7 @@ public class TestHttpRequest {
     public static void testSpringHttpClient() {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> response = restTemplate.
-                getForEntity("http://www.example.com", String.class);
+                getForEntity("https://www.example.com", String.class);
         HttpStatusCode statusCode = response.getStatusCode();
         int statusCodeValue = statusCode.value();
         System.out.println(statusCodeValue);
