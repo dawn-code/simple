@@ -1,8 +1,8 @@
-package com.ctl.simple;
+package com.ctl.simple.thread;
 
 public class TheadLocalTest {
 
-    static  ThreadLocal<String> str = new ThreadLocal<>();
+    static ThreadLocal<String> str = new ThreadLocal<>();
 
     static void main() {
         str.set("a");
