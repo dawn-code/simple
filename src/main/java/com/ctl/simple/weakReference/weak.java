@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class weak {
 
-    public static void main(String[] args) throws Exception {
+    static void main() throws Exception {
         Map<WeakReference<Integer>, WeakReference<Integer>> map = new HashMap<>(8);
         WeakReference<Integer> key = new WeakReference<>(1);
         WeakReference<Integer> value = new WeakReference<>(127);
@@ -15,8 +15,5 @@ public class weak {
         Thread.sleep(1000);
         System.gc();
         System.out.println("get " + map.get(key).get());
-
-
     }
-
 }
